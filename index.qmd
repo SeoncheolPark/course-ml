@@ -1,0 +1,38 @@
+---
+title: "Sataistical Data Science (2025 Fall, Hanyang University)"
+jupyter: python3
+---
+
+<!--
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{python}
+1 + 1
+```
+-->
+
+## About this course
+
+-   Course name: MAT9074 (32432), Sataistical Data Science
+
+-   Instructor: [Seoncheol Park](https://seoncheolpark.github.io)
+
+-   Language: Korean
+
+-   Schedule: 
+    -   To be announced
+
+-   Textbook:
+
+    -   [Data Science and Machine Learning](https://people.smp.uq.edu.au/DirkKroese/DSML/)
+    -   [통계학으로 배우는 머신러닝](https://product.kyobobook.co.kr/detail/S000001804976)
+    -   [확률론적 머신러닝](https://product.kyobobook.co.kr/detail/S000213262947)
+
+-   Grading:
+
+    -   Class attendance (10%)
+    -   Projects (20%)
+    -   Midterm (35%)
+    -   Final (35%)

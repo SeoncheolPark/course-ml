@@ -1,0 +1,418 @@
+---
+title: "Python Primer"
+author: "Seoncheol Park"
+format:
+  html:
+    toc-depth: 4
+filters:
+  - pyodide
+---
+
+## Getting Started
+
+- [파이썬](https://www.python.org/)
+
+- [아나콘다](https://www.anaconda.com/)
+
+- [VS Code](https://code.visualstudio.com/)
+
+- [Positron](https://positron.posit.co/)
+
+### `print`
+
+```{pyodide-python}
+print('Hello World!')
+print("Name:{1} (height {2} m, age {0})".format(111,"Bilbo",0.84))
+x = [1,'string',"another string"] # Quote type is not important
+x
+
+```
+
+### Mutable and slice
+
+```{pyodide-python}
+x = [1,2]
+x[0] = 2 # Note that the first index is 0 
+x
+x = (1,2) 
+#x[0] = 2 # TypeError: 'tuple' object does not support item assignment
+a = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+a[1:4] # Elements with index from 1 to 3 
+a[:4] # All elements with index less than 4 
+a[3:] # All elements with index 3 or more 
+a[-2:] # The last two elements
+'hello' + 'world' # String concatenation
+'hello' * 2 # String repetition
+[1,2] * 2 # List repetition
+15 % 4 # Remainder of 15/4
+
+```
+
+## Python Objects
+
+- Each object has a list of **attributes**
+
+- Any attribute `attr` of an object obj can be accessed via the **dot notation**
+
+```{pyodide-python}
+s = "hello"
+d = dir(s)
+print(d,flush=True) # Print the list in "flushed" format
+s1 = s.replace('e','a')
+print(s1)
+
+```
+
+## Types and Operators
+
+- Each object has a **type**:
+    - `str`, `int`, `float`, ...
+
+```{pyodide-python}
+t1 = type([1,2,3]) 
+t2 = type((1,2,3)) 
+t3 = type({1,2,3}) 
+print(t1,t2,t3)
+
+```
+
+- reference
+
+```{pyodide-python}
+x = [1,2]
+y = x # y refers to the same object as x
+print(id(x) == id(y)) # check that the object id's are the same 
+y[0] = 100 # change the contents of the list that y refers to 
+print(x)
+x = [1,2]
+y = x # y refers to the same object as x
+y = [100,2] # now y refers to a different object 
+print(id(x) == id(y))
+print(x)
+
+```
+
+- Operator **overloading**: Operators such as `+` and `*` can be defined for other data types as well
+
+## Functions and Methods
+
+- Compute population mean and variance
+
+```{pyodide-python}
+from numpy import array, square, sqrt
+
+x = array([1.2, 2.3, 4.5])
+
+def stat(x):
+  n = len(x) #the length of x 
+  meanx = sum(x)/n
+  stdx = sqrt(sum(square(x - meanx))/n) 
+  return [meanx,stdx]
+  
+print(stat(x))
+
+```
+
+## Modules
+
+- 모듈: 관련 함수, 클래스, 변수 등을 그룹화한 파일(`.py` 파일)
+    - `datetime`, `matplotlib`, `numpy`, `os`, `pandas`, ...
+    
+## Flow Control
+
+- `while`, `for`, `if-else`, ...
+
+## Iteration
+
+```{pyodide-python}
+s = "Hello"
+t = s.__iter__() # t is now an iterator. Same as iter(s) 
+print(t.__next__() ) # same as next(t)
+print(t.__next__() )
+print(t.__next__() )
+
+```
+
+### Sets
+
+- Python `sets` are unordered collections of unique objects `{}`
+
+```{pyodide-python}
+A = {3, 2, 2, 4} 
+B = {4, 3, 1} 
+C=A&B
+for i in A:
+  print(i) 
+print(C)
+
+```
+
+### Lists
+
+- 리스트: 중복(값은 값 여러 번 포함) 가능, 순서 보장 가능(요소들이 추가된 순서대로 저장됨, 인덱스로 접근할 수 없음), 수정 가능(요소의 추가, 삭제, 변경 가능)
+
+- Set: 중복된 값을 허용하지 않고, 순서를 보장하지 않고(따라서 인덱스로 접근할 수 없음), 요소의 추가 및 삭제가 가능하나 특정 위치의 요소를 변경하는 것은 불가능
+
+```{pyodide-python}
+setA = {3, 2, 4, 2}
+setB = {x**2 for x in setA} 
+print(setB)
+listA = [3, 2, 4, 2]
+listB = [x**2 for x in listA] 
+print(listB)
+
+```
+
+### Dictonary
+
+- 딕셔너리: `key:value`의 조합으로 이루어짐, 키를 사용하여 값에 접근, 키는 중복될 수 없지만 값은 중복될 수 있음
+
+```{pyodide-python}
+DICT = {'Gimly': 140, 'Frodo':51, 'Aragorn': 88} 
+for key in DICT:
+  print(key, DICT[key])
+
+```
+
+## Classes
+
+- 새로운 클래스 만드는 예시
+
+```{pyodide-python}
+class person:
+  def __init__(self,name):
+      self.name = name 
+      self.age = 0 
+      self.address= ' '
+
+class shire_person(person): 
+  def __init__(self,name):
+      super().__init__(name) 
+      self.Shire_address = 'Bag End'
+
+p1 = shire_person("Frodo")
+p2 = person("Gandalf") 
+print(dir(p1)[:1],dir(p1)[-3:] ) 
+print(dir(p2)[:1],dir(p2)[-3:] )
+
+```
+
+## Files
+
+- 교재에 있는 예제 직접 해 보세요
+
+## `Numpy`
+
+- `Numpy`의 삼각함수
+
+```{pyodide-python}
+import numpy as np #import the package 
+x = np.cos(1)
+data = [1,2,3,4,5]
+y = np.mean(data)
+z = np.std(data)
+print('cos(1) = {0:1.8f} mean = {1} std = {2}'.format(x,y,z))
+
+```
+
+### Creating and shaping arrays
+
+- The fundamental data type in `numpy` is the `ndarray`.
+
+- Note that `arange` is `numpy`’s version of `range`, with the di↵erence that `arange` returns an `ndarray` object.
+
+- The dimension of an `ndarray` can be obtained via its `shape` method, which returns a tuple.
+
+- Arrays can be reshaped via the `reshape` method. This does not change the current `ndarray` object. 
+
+- `hstack` and `vstack`: The arrays are joined horizontally and vertically, respectively.
+
+```{pyodide-python}
+import numpy as np
+A = np.zeros([2,3,2]) # 2 by 3 by 2 array of zeros 
+print(A)
+print(A.shape) # number of rows and columns 
+print(type(A)) # A is an ndarray
+a = np.array(range(4)) # equivalent to np.arange(4) 
+b = np.array([0,1,2,3])
+C = np.array([[1,2,3],[3,2,1]])
+print(a, '\n', b,'\n' , C)
+a = np.array(range(9)) #a is an ndarray of shape (9,) 
+print(a.shape)
+A = a.reshape(3,3) #A is an ndarray of shape (3,3) 
+print(a)
+print(A)
+A = np.ones((3,3))
+B = np.zeros((3,2)) 
+C = np.hstack((A,B)) 
+print(C)
+
+```
+
+### Slicing
+
+- Arrays can be sliced similarly to Python lists. 
+
+- If an array has several dimensions, a slice for each dimension needs to be specified.
+
+- `ndarrays` are mutable
+
+```{pyodide-python}
+A = np.array(range(9)).reshape(3,3)
+print(A)
+print(A[0]) # first row
+print(A[:,1]) # second column
+print(A[0,1]) # element in first row and second column 
+print(A[0:1,1:2]) # (1,1) ndarray containing A[0,1] = 1 
+print(A[1:,-1]) # elements in 2nd and 3rd rows, and last column
+
+```
+
+### Array Operations
+
+- Basic mathematical operators and functions act element-wise on `ndarray` objects.
+
+- Since version 3.5 of Python, it is possible to multiply two `ndarray`s using the `@` operator (which implements the `np.matmul` method). For matrices, this is similar to using the dot method. For higher-dimensional arrays the two methods behave differently.
+
+- `numpy` allows arithmetic operations on arrays of different shapes (dimensions).
+
+```{pyodide-python}
+x = np.array([[2,4],[6,8]]) 
+y = np.array([[1,1],[2,2]])
+print(np.dot(x,y))
+print(x @ y)
+import numpy as np
+A= np.arange(4).reshape(2,2) # (2,2) array
+x1 = np.array([40,500]) # (2,) array 
+x2 = x1.reshape(2,1) # (2,1) array
+print(A + x1) # shapes (2,2) and (2,) 
+print(A * x2) # shapes (2,2) and (2,1)
+
+```
+
+### Random numbers
+
+- `numpy`에는 `random`이라는 sub-modules 존재
+
+```{pyodide-python}
+import numpy as np
+np.random.seed(123) # set the seed for the random number generator 
+x = np.random.random() # uniform (0,1)
+y = np.random.randint(5,9) # discrete uniform 5,...,8
+z = np.random.randn(4) # array of four standard normals 
+print(x,y,'\n',z)
+
+```
+
+## `Matplotlib`
+
+- 산점도 예제
+
+```{pyodide-python}
+import matplotlib.pyplot as plt 
+import numpy as np
+x = np.arange(0, 10, 0.1)
+u = np.arange(0,10)
+y = np.sqrt(x)
+v = u/3
+plt.figure(figsize = [4,2]) # size of plot in inches 
+plt.plot(x,y, 'g--') # plot green dashed line 
+plt.plot(u,v,'r.') # plot red dots plt.xlabel('x')
+plt.ylabel('y')
+plt.tight_layout()
+plt.show() # both plots will now be drawn
+
+```
+
+## `Pandas`
+
+- `pandas`: `DataFrame` 클래스를 포함하여 데이터 구성과 분석에 필요한 다양한 툴 제공 
+
+```{pyodide-python}
+import pandas as pd
+years = ['2000','2001','2002']
+cost = [2.34, 2.89, 3.01]
+print(pd.Series(cost,index = years, name = 'MySeries')) #name it
+ages = [6,3,5,6,5,8,0,3]
+d={'Gender':['M', 'F']*4, 'Age': ages}
+df1 = pd.DataFrame(d)
+df1.at[0,'Age']= 60 # change an element
+df1.at[1,'Gender'] = 'Female' # change another element
+df2 = df1.drop('Age',axis=1)# drop a column
+df3 = df2.copy(); # create a separate copy of df2
+df3['Age'] = ages # add the original column
+dfcomb = pd.concat([df1,df2,df3],axis=1) # combine the three dfs 
+print(dfcomb)
+
+```
+
+### Extracting Information
+
+- The `apply` method allows one to apply general functions to columns or rows of a DataFrame. 
+
+- The `loc` method allows for accessing elements (or ranges) in a data frame.
+
+- `count`: Counts number of non-NA cells.
+
+- The `groupby` method of a DataFrame object is useful for summarizing and displaying the data in manipulated ways.
+
+- `mean`: Column/row mean.
+
+```{pyodide-python}
+import numpy as np
+import pandas as pd
+ages = [6,3,5,6,5,8,0,3]
+np.random.seed(123)
+df = pd.DataFrame(np.random.randn(3,4), index = list('abc'), columns = list('ABCD'))
+print(df)
+df1 = df.loc["b":"c","B":"C"] # create a partial data frame 
+print(df1)
+meanA = df['A'].mean() # mean of 'A' column
+print('mean of column A = {}'.format(meanA))
+expA = df['A'].apply(np.exp) # exp of all elements in 'A' column 
+print(expA)
+
+```
+
+## `Scikit-learn`
+
+### Partitioning the Data
+
+- `train_test_split` 함수로 자료 분할 가능
+
+### Standardization
+
+- `MinMaxScaler`, `StandardScaler` 활용 가능
+
+
+```{pyodide-python}
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+
+np.random.seed(1234)
+
+X=np.pi*(2*np.random.random(size=(400,2))-1) 
+y=(np.cos(X[:,0])*np.sin(X[:,1])>=0)
+
+X_train , X_test , y_train , y_test = train_test_split(X, y, test_size =0.5)
+
+fig = plt.figure()
+ax = fig.add_subplot(111) 
+ax.scatter(X_train[y_train==0,0],X_train[y_train==0,1], c='g', marker='o',alpha=0.5) 
+ax.scatter(X_train[y_train==1,0],X_train[y_train==1,1], c='b', marker='o',alpha=0.5) 
+ax.scatter(X_test[y_test==0,0],X_test[y_test==0,1], c='g', marker='s',alpha=0.5) 
+ax.scatter(X_test[y_test==1,0],X_test[y_test==1,1], c='b', marker='s',alpha=0.5)
+plt.show()
+
+from sklearn import preprocessing
+min_max_scaler = preprocessing.MinMaxScaler(feature_range=(0, 1)) 
+x_scaled = min_max_scaler.fit_transform(X)
+# equivalent to:
+x_scaled = (X - X.min(axis=0)) / (X.max(axis=0) - X.min(axis=0))
+
+```
+
+## References
+
+- [Data Science and Machine Learning](https://people.smp.uq.edu.au/DirkKroese/DSML/)

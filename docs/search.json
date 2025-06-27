@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n2"
+  },
+  {
+    "objectID": "00_pythonprimer.html",
+    "href": "00_pythonprimer.html",
+    "title": "Python Primer",
+    "section": "",
+    "text": "파이썬\n아나콘다\nVS Code\nPositron\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#getting-started",
+    "href": "00_pythonprimer.html#getting-started",
+    "title": "Python Primer",
+    "section": "",
+    "text": "파이썬\n아나콘다\nVS Code\nPositron\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#python-objects",
+    "href": "00_pythonprimer.html#python-objects",
+    "title": "Python Primer",
+    "section": "Python Objects",
+    "text": "Python Objects\n\nEach object has a list of attributes\nAny attribute attr of an object obj can be accessed via the dot notation\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#types-and-operators",
+    "href": "00_pythonprimer.html#types-and-operators",
+    "title": "Python Primer",
+    "section": "Types and Operators",
+    "text": "Types and Operators\n\nEach object has a type:\n\nstr, int, float, …\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nreference\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nOperator overloading: Operators such as + and * can be defined for other data types as well"
+  },
+  {
+    "objectID": "00_pythonprimer.html#functions-and-methods",
+    "href": "00_pythonprimer.html#functions-and-methods",
+    "title": "Python Primer",
+    "section": "Functions and Methods",
+    "text": "Functions and Methods\n\nCompute population mean and variance\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#modules",
+    "href": "00_pythonprimer.html#modules",
+    "title": "Python Primer",
+    "section": "Modules",
+    "text": "Modules\n\n모듈: 관련 함수, 클래스, 변수 등을 그룹화한 파일(.py 파일)\n\ndatetime, matplotlib, numpy, os, pandas, …"
+  },
+  {
+    "objectID": "00_pythonprimer.html#flow-control",
+    "href": "00_pythonprimer.html#flow-control",
+    "title": "Python Primer",
+    "section": "Flow Control",
+    "text": "Flow Control\n\nwhile, for, if-else, …"
+  },
+  {
+    "objectID": "00_pythonprimer.html#iteration",
+    "href": "00_pythonprimer.html#iteration",
+    "title": "Python Primer",
+    "section": "Iteration",
+    "text": "Iteration\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nSets\n\nPython sets are unordered collections of unique objects {}\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nLists\n\n리스트: 중복(값은 값 여러 번 포함) 가능, 순서 보장 가능(요소들이 추가된 순서대로 저장됨, 인덱스로 접근할 수 없음), 수정 가능(요소의 추가, 삭제, 변경 가능)\nSet: 중복된 값을 허용하지 않고, 순서를 보장하지 않고(따라서 인덱스로 접근할 수 없음), 요소의 추가 및 삭제가 가능하나 특정 위치의 요소를 변경하는 것은 불가능\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nDictonary\n\n딕셔너리: key:value의 조합으로 이루어짐, 키를 사용하여 값에 접근, 키는 중복될 수 없지만 값은 중복될 수 있음\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#classes",
+    "href": "00_pythonprimer.html#classes",
+    "title": "Python Primer",
+    "section": "Classes",
+    "text": "Classes\n\n새로운 클래스 만드는 예시\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#files",
+    "href": "00_pythonprimer.html#files",
+    "title": "Python Primer",
+    "section": "Files",
+    "text": "Files\n\n교재에 있는 예제 직접 해 보세요"
+  },
+  {
+    "objectID": "00_pythonprimer.html#numpy",
+    "href": "00_pythonprimer.html#numpy",
+    "title": "Python Primer",
+    "section": "Numpy",
+    "text": "Numpy\n\nNumpy의 삼각함수\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nCreating and shaping arrays\n\nThe fundamental data type in numpy is the ndarray.\nNote that arange is numpy’s version of range, with the di↵erence that arange returns an ndarray object.\nThe dimension of an ndarray can be obtained via its shape method, which returns a tuple.\nArrays can be reshaped via the reshape method. This does not change the current ndarray object.\nhstack and vstack: The arrays are joined horizontally and vertically, respectively.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nSlicing\n\nArrays can be sliced similarly to Python lists.\nIf an array has several dimensions, a slice for each dimension needs to be specified.\nndarrays are mutable\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nArray Operations\n\nBasic mathematical operators and functions act element-wise on ndarray objects.\nSince version 3.5 of Python, it is possible to multiply two ndarrays using the @ operator (which implements the np.matmul method). For matrices, this is similar to using the dot method. For higher-dimensional arrays the two methods behave differently.\nnumpy allows arithmetic operations on arrays of different shapes (dimensions).\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\nRandom numbers\n\nnumpy에는 random이라는 sub-modules 존재\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#matplotlib",
+    "href": "00_pythonprimer.html#matplotlib",
+    "title": "Python Primer",
+    "section": "Matplotlib",
+    "text": "Matplotlib\n\n산점도 예제\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#pandas",
+    "href": "00_pythonprimer.html#pandas",
+    "title": "Python Primer",
+    "section": "Pandas",
+    "text": "Pandas\n\npandas: DataFrame 클래스를 포함하여 데이터 구성과 분석에 필요한 다양한 툴 제공\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nExtracting Information\n\nThe apply method allows one to apply general functions to columns or rows of a DataFrame.\nThe loc method allows for accessing elements (or ranges) in a data frame.\ncount: Counts number of non-NA cells.\nThe groupby method of a DataFrame object is useful for summarizing and displaying the data in manipulated ways.\nmean: Column/row mean.\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#scikit-learn",
+    "href": "00_pythonprimer.html#scikit-learn",
+    "title": "Python Primer",
+    "section": "Scikit-learn",
+    "text": "Scikit-learn\n\nPartitioning the Data\n\ntrain_test_split 함수로 자료 분할 가능\n\n\n\nStandardization\n\nMinMaxScaler, StandardScaler 활용 가능\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page."
+  },
+  {
+    "objectID": "00_pythonprimer.html#references",
+    "href": "00_pythonprimer.html#references",
+    "title": "Python Primer",
+    "section": "References",
+    "text": "References\n\nData Science and Machine Learning"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sataistical Data Science (2025 Fall, Hanyang University)",
+    "section": "",
+    "text": "Course name: MAT9074 (32432), Sataistical Data Science\nInstructor: Seoncheol Park\nLanguage: Korean\nSchedule:\n\nTo be announced\n\nTextbook:\n\nData Science and Machine Learning\n통계학으로 배우는 머신러닝\n확률론적 머신러닝\n\nGrading:\n\nClass attendance (10%)\nProjects (20%)\nMidterm (35%)\nFinal (35%)"
+  },
+  {
+    "objectID": "index.html#about-this-course",
+    "href": "index.html#about-this-course",
+    "title": "Sataistical Data Science (2025 Fall, Hanyang University)",
+    "section": "",
+    "text": "Course name: MAT9074 (32432), Sataistical Data Science\nInstructor: Seoncheol Park\nLanguage: Korean\nSchedule:\n\nTo be announced\n\nTextbook:\n\nData Science and Machine Learning\n통계학으로 배우는 머신러닝\n확률론적 머신러닝\n\nGrading:\n\nClass attendance (10%)\nProjects (20%)\nMidterm (35%)\nFinal (35%)"
+  }
+]

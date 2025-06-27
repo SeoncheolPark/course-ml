@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Statistical Data Science"
+  navbar:
+    collapse: true
+    collapse-below: sm
+    logo: images/02.svg
+    href: http://stat.hanyang.ac.kr
+    background: primary
+    search: true
+    left:
+      - href: index.qmd
+        text: Home
+      - text: "Lab"
+        menu:
+          - text: "Lab 00: Python Primer"
+            file: 00_pythonprimer.qmd
+    right: 
+      - icon: house-door-fill
+        href: https://seoncheolpark.github.io
+  page-footer: "Copyright 2025, Seoncheol Park"       
+format:
+  html:
+    theme:
+      light: [minty, theme.scss]
+      dark: [minty, theme-dark.scss]
+    fontsize: 1.1em
+    linestretch: 1.7
+    css: styles.css
+    toc: true
+  
+editor: visual
