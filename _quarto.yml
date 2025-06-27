@@ -31,5 +31,6 @@ format:
     linestretch: 1.7
     css: styles.css
     toc: true
+    page-layout: full
   
 editor: visual
